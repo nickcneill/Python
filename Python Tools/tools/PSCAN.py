@@ -1,6 +1,13 @@
+'''
+Author: Nicholas Neill
+Date: 11/16/2017
+Interpreter: 3.6.3
+IDE: PyCharm
+Description: Lite TCP port scanner for penetration testing and network security.
+Version: PSCAN 0.9.1
+'''
+
 import socket
-import subprocess
-import sys
 import time
 from datetime import datetime
 import os
@@ -67,7 +74,7 @@ def user_input():  # Handle input and process it
                 raise ValueError("Could not handle your input try entering port(s) in another way")
             elif len(ports) <= 2:  # If true then we either have single Port or Range of Ports to scan
                 start_port = min(ports)  # Using the range function we can handle both ranges
-                end_port = max(ports)    # or single ports
+                end_port = max(ports)  # or single ports
                 range_scan(start_port, end_port, remote_server_ip)  # pass arguments to range_scan function.
                 break  # Input is good ---> break try loop
             elif len(ports) > 2:  # List of port numbers to scan.
@@ -117,6 +124,7 @@ def targeted_scan(targets, ip):
 
     # check scan_time
     start_time = datetime.now()
+
     try:
         for port in targets:  # targets is a list that can easily be enumerated.
             sock_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -136,10 +144,13 @@ def targeted_scan(targets, ip):
         clear(2, 1)
     finish(start_time)  # Pass the port scan start time as argument to finsh fucntion
 
+
 # option to make ports into objects but UDP results wont work with Connect_EX
 # because UDP is connectionless Socket assumes it is sent and does not handle closed ports.
 
-''' class PortStatus(object):
+''' 
+
+class PortStatus(object):
     def __init__(self, tcp, udp, number):
         self.tcp = tcp
         self.udp = udp
