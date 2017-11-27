@@ -8,18 +8,22 @@ ECHO PRESS 1, 2 OR 3 to select your task, or 4 to EXIT.
 ECHO ...............................................
 ECHO.
 ECHO 1 - Open PSCAN
-ECHO 2 - TOOL 2
+ECHO 2 - Open EXLIB
 ECHO 3 - TOOL 3
 ECHO 4 - EXIT
 ECHO
 SET /P M=Type 1, 2, 3, or 4 then press ENTER:
 IF %M%==1 GOTO PSCAN
-IF %M%==2 GOTO TOOL2
+IF %M%==2 GOTO EXLIB
 IF %M%==3 GOTO TOOL3
 IF %M%==4 GOTO EOF
 :PSCAN
 cd %cd%\TOOLS\
 start python PSCAN.py
+GOTO MENU
+:EXLIB
+cd %cd%\TOOLS\
+start python EXLIB.py
 GOTO MENU
 :CALC
 cd %windir%\system32\calc.exe
