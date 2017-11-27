@@ -1,0 +1,27 @@
+<Library>
+    <expression name="PhoneNumber">
+        <match>Phone Number</match>
+        <description>Matches phone numbers</description>
+        <regex>.?\d{3}.?\d{3}.?\d{4}</regex>
+    </expression>
+     <expression name="SSN">
+        <match>SSN</match>
+        <description>Matches Social Security Numbers</description>
+        <regex>\d{3}.?\d{2}.?\d{4}</regex>
+    </expression>
+     <expression name="Email">
+        <match>Email Address</match>
+        <description>Matches Email addresses</description>
+        <regex>*@*.[com,net,mail,mil]</regex>
+    </expression>
+     <expression name="Zip">
+        <match>Zip Code</match>
+        <description>Matches US Postal Codes</description>
+        <regex>\d{5}.?\d{4}?</regex>
+    </expression>
+    <expression name="PythonFile">
+        <match>matches python files</match>
+        <description>Matches files formatted with the .py file extension</description>
+        <regex>/[.py,.py]</regex>
+    </expression>
+<expression name="Three Digits"><match>Any three digits</match><description>Matches all occurrences of three digits</description><regex>/d{3}</regex></expression><expression name="Matt"><regex>Matt</regex><regex>Matt</regex></expression><expression name="Matt"><Match>Matches the name Matt</Match><Match>Matches the name Matt</Match></expression><expression name="SSN"><description>Matches all Social Security Numbers</description><description>Matches all Social Security Numbers</description></expression></Library>
