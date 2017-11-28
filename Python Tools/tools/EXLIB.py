@@ -232,10 +232,6 @@ class Expression(object):
                         for attr in child:
                             if child.get('name') == r_name:
                                 r_sentinel = True
-                                if attr.tag == 'match':
-                                    match = attr.text
-                                if attr.tag == 'description':
-                                    desc = attr.text
                                 if attr.tag == 'regex':
                                     regex = attr.text
                 if r_sentinel:
